@@ -1,0 +1,113 @@
+body {
+  background: #f7f7f7;
+  font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 448px;
+  min-width: 386px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 24px;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+#sudoku-board {
+  margin: 0 auto 24px auto;
+  display: flex;
+  justify-content: center;
+}
+
+#sudoku-board table {
+  border-collapse: collapse;
+}
+
+#sudoku-board td {
+  border: 1px solid #bbb;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#sudoku-board tr:nth-child(3n) td {
+  border-bottom: 2.5px solid #333;
+}
+#sudoku-board td:nth-child(3n) {
+  border-right: 2.5px solid #333;
+}
+#sudoku-board tr:first-child td {
+  border-top: 2.5px solid #333;
+}
+#sudoku-board td:first-child {
+  border-left: 2.5px solid #333;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  transition: background 0.2s;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.cell:focus {
+  background: #e0f7fa;
+}
+
+.cell.initial {
+  background: #f5f5f5 !important;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.cell.related:not(:focus) {
+  background: #fff8ba;
+}
+
+.controls {
+  margin-top: 16px;
+}
+
+.btn {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 20px;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #1769aa;
+}
+
+.btn:disabled,
+.btn.btn-disabled {
+  background: #b0bec5 !important;
+  color: #fff !important;
+  cursor: not-allowed !important;
+  opacity: 0.7;
+}
